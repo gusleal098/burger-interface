@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   <UserProvider>
-  <Login/>
+    <Login/>
   </UserProvider>
   <ToastContainer autoClose={2000} theme='colored'/>
   <GlobalStyles/>
