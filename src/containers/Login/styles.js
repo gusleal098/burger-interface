@@ -69,6 +69,7 @@ export const SignInLink = styled.p`
     a {
         cursor: pointer;
         text-decoration: underline;
+        color: #ffffff;
     }
 `
 
