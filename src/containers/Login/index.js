@@ -1,12 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from '../../services/api';
 import { useUser } from '../../hooks/UserContext'
 
-import Button from '../../components/Button';
+import {Button} from '../../components';
 import LoginImg from '../../assets/login-image.png';
 import Logo from '../../assets/logo.png';
 
@@ -20,8 +21,9 @@ import {
     ErrorMessage
 } from './styles';
 
-function Login() {
-    const { putUserData, userData} = useUser()
+export function Login() {
+    const history = useHistory()
+    const { putUserData } = useUser()
 
     const schema = Yup.object().shape({
         email: Yup.string()
@@ -42,7 +44,7 @@ function Login() {
 
     const onSubmit = async (clientData) => {
         try {
-            const {data} = await api.post('sessions', {
+            const response = await api.post('sessions', {
                 email: clientData.email,
                 password: clientData.password
             });
@@ -54,14 +56,23 @@ function Login() {
                 toast.error('Verifique seu e-mail e senha');
             }
 
-            console.log(response.data); 
+            putUserData(response.data)
+
+            setTimeout(() => {
+                history.push('/')
+            }, 1000)
+            
         } catch (error) {
+            if (error.response &&
+                (error.response.status === 401 ||
+                    error.response.status === 403)
+            ) {
+                toast.error('Verifique seu e-mail e senha')
+            } else {
             console.error('Erro ao fazer login:', error);
             toast.error('Falha ao fazer login. Tente novamente');
+            }
         }
-
-        putUserData(data)
-        console.log(userData)
     };
 
     return (
@@ -84,11 +95,12 @@ function Login() {
                 </form>
 
                 <SignInLink>
-                    Não possui conta? <a href="/signup">Sign Up</a>
+                    Não possui conta?{' '}
+                    <Link to="/cadastro">
+                    Sign Up
+                    </Link>
                 </SignInLink>
             </ContainerItens> 
         </Container>
     );
 }
-
-export default Login;
