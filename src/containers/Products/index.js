@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
+import PropTypes from 'prop-types'
 import ProductsLogo from '../../assets/products-logo.png'
 import api from '../../services/api'
 import {CardProduct} from '../../components'
@@ -14,11 +15,17 @@ import {
 
 } from './styles'
 
-export function Products(){
+export function Products({location: {state}}){
+
+    let categoryId = 0
+    if(state?.categoryId) { // ? = ELVIS OPERATOR
+        categoryId = state.categoryId
+    }
+
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setActiveCategories] = useState(0)
+    const [activeCategory, setActiveCategories] = useState(categoryId)
 
     useEffect(() => {
 
@@ -82,4 +89,8 @@ export function Products(){
             </ProductsContainer>
         </Container>
     )
+}
+
+Products.propTypes = {
+    location: PropTypes.object
 }
