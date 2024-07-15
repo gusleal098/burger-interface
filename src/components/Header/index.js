@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { useHistory } from 'react-router-dom'
 
 import { useUser } from '../../hooks/UserContext'
 
@@ -46,7 +46,7 @@ export function Header(){
                     <img src={Person} alt='logo-pessoa' />
                 </PageLink>
                 <ContainerText>
-                    <p>Ola, {userData.user.name}</p>
+                    <p>Ola, {userData?.user?.name}</p>
                     <PageLinkExit onClick={logoutUser}>Sair</PageLinkExit>
                 </ContainerText>
             </ContainerRight>

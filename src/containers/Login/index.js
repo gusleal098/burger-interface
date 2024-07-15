@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import api from '../../services/api';
 import { useUser } from '../../hooks/UserContext'
 
-import {Button} from '../../components';
+import {Button, ErrorMessage} from '../../components';
 import LoginImg from '../../assets/login-image.png';
 import Logo from '../../assets/logo.png';
 
@@ -17,8 +17,7 @@ import {
     ContainerItens, 
     Label,
     Input,
-    SignInLink,
-    ErrorMessage
+    SignInLink
 } from './styles';
 
 export function Login() {
@@ -59,7 +58,11 @@ export function Login() {
             putUserData(response.data)
 
             setTimeout(() => {
-                history.push('/')
+                if (response.data.user.admin) {
+                    history.push('/pedidos')
+                } else {
+                    history.push('/')
+                }
             }, 1000)
             
         } catch (error) {

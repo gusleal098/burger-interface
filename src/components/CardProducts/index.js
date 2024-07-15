@@ -25,9 +25,9 @@ export function CardProduct({product}){
                 <ProductPrice>{product.formatedPrice}</ProductPrice>
                 <Button onClick={() => {
                             putProductInCart(product)
-                            push('/carrinho')
+                            // push('/carrinho')
                         }}
-                        >adicionar</Button>
+                        >Adicionar</Button>
             </div>
         </Container>
     )
