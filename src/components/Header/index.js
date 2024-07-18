@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useUser } from '../../hooks/UserContext'
+import { useCart } from '../../hooks/CartContext'
 
 import Person from '../../assets/person.png'
 import Cart from '../../assets/cart.png'
@@ -13,12 +14,13 @@ import {
     PageLinkExit,
     ContainerRight,
     ContainerText,
-    Line
+    Line,
 
 } from './styles'
 
 export function Header(){
     const { logout, userData } = useUser()
+    const {cartProducts} = useCart([])
 
     const {
         push,
@@ -40,6 +42,13 @@ export function Header(){
             <ContainerRight>
                 <PageLink onClick={() => push('/carrinho')}>
                     <img src={Cart} alt='carrinho' />
+                    {cartProducts && cartProducts.length > 0 ?
+                        cartProducts.map(product => (
+                            <p>{product.id}</p>
+                        ))
+                            : ( <p></p>)
+                    }
+                    
                 </PageLink>
                 <Line></Line>
                 <PageLink>

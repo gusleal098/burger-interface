@@ -37,6 +37,10 @@ export const ContainerItens = styled.div`
             flex-direction: column;
         }
     }
+
+    img {
+        width: 400px;
+    }
 `
 
 export const Label = styled.p`

@@ -22,6 +22,21 @@ export const PageLink = styled.a`
     font-size: 16px;
     line-height: 19px;
     font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
+
+    p {
+        position: absolute;
+        top: 5px;
+        background: #9758a6;
+        color: #ffffff;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 10px;
+        height: 18px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        margin-left: 7px;
+    }
 `
 
 export const ContainerRight = styled.div`
@@ -55,3 +70,12 @@ export const PageLinkExit = styled.a`
 
     color: #9758a6;
 `
+
+// export const AddItem = styled.p`
+//     position: absolute;
+//     top: 5px;
+//     right: 10px;
+//     background: #9758a6;
+//     color: #ffffff;
+//     border-radius: 50%;
+// `
