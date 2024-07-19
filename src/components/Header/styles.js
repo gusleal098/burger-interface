@@ -25,7 +25,7 @@ export const PageLink = styled.a`
 
     p {
         position: absolute;
-        top: 5px;
+        top: 7px;
         background: #9758a6;
         color: #ffffff;
         border-radius: 50%;

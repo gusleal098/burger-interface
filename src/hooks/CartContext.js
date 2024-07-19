@@ -6,6 +6,7 @@ const CartContext = createContext({})
 
 export const CartProvider = ({ children }) => {
     const [cartProducts, setCartProducts] = useState([])
+    const [isStoreOpen, setIsStoreOpen] = useState(false)
 
     const updateLocalStorage = async products => {
         await localStorage.setItem('codeburger:cartInfo', JSON.stringify(products))

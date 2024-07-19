@@ -11,6 +11,10 @@ export const Container = styled.div`
     hr {
         margin: 50px 15px;
     }
+
+    p {
+        color: red;
+    }
 `
 
 export const ItemContainer = styled.div`

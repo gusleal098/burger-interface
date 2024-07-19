@@ -81,12 +81,13 @@ export function Products({location: {state}}){
                     </CategoryButton>
                 ))}
             </CategoriesMenu>
-            <ProductsContainer>
-                {filteredProducts &&
-                    filteredProducts.map(product => (
-                <CardProduct key={product.id} product={product} />
-                ))}
-            </ProductsContainer>
+                <ProductsContainer>
+                        {filteredProducts &&
+                            filteredProducts.map(product => (
+                        <CardProduct key={product.id} product={product} />
+                        ))} 
+                    
+                </ProductsContainer>
         </Container>
     )
 }

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 import api from '../../services/api' 
 import { useCart } from '../../hooks/CartContext' 
 import formatCurrency from '../../utils/formatCurrency' 
-import { Container } from './styles' 
+import { Container, InputAdress } from './styles' 
 import { Button } from '../Button' 
 import { toast } from 'react-toastify' 
  
@@ -52,6 +52,27 @@ export function CartResume(){
                     <p>{formatCurrency(finalPrice + deliveryTax)}</p> 
                 </div> 
             </Container> 
+            <InputAdress>
+                <h2 className='title-adress'>Endereço de entrega</h2>
+                <label>Rua</label>
+                <input required></input>
+
+                <label>Nº</label>
+                <input required className='number'></input>
+
+                <label>Complemento</label>
+                <input></input>
+
+                <label>Bairro</label>
+                <input required></input>
+
+                <select required>
+                    <option> -- Forma de Pagamento --</option>
+                    <option>Pix</option>
+                    <option>Dinheiro</option>
+                    <option>Cartão Crédito/Débito</option>
+                </select>
+            </InputAdress>
             <Button style={{ width: '100%', marginTop: 30 }} onClick={submitOrder}> 
                 Finalizar Pedido 
             </Button> 

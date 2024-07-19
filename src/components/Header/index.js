@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useUser } from '../../hooks/UserContext'
@@ -32,6 +32,12 @@ export function Header(){
         push('/login')
     }
 
+    const [cartQuantity, setCartQuantity] = useState(0)
+
+    useEffect(() => {
+        setCartQuantity(cartProducts.length)
+    }, [cartProducts])
+
     return (
         <Container>
             <ContainerLeft>
@@ -42,11 +48,10 @@ export function Header(){
             <ContainerRight>
                 <PageLink onClick={() => push('/carrinho')}>
                     <img src={Cart} alt='carrinho' />
-                    {cartProducts && cartProducts.length > 0 ?
-                        cartProducts.map(product => (
-                            <p>{product.id}</p>
-                        ))
-                            : ( <p></p>)
+                    {cartQuantity > 0 ? (
+                            <p>{cartQuantity}</p>
+                        )
+                            : ( <p style={{background: 'transparent'}}></p>)
                     }
                     
                 </PageLink>

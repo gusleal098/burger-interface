@@ -47,3 +47,49 @@ export const Container = styled.div`
         margin-top: 50px;
     }
 `
+
+export const InputAdress = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background: #373737;
+    border-radius: 10px;
+    padding: 15px;
+
+    h2 {
+        display: flex;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    input {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+    }
+
+    .number {
+        width: 50px;
+    }
+
+    select { 
+        margin-top: 20px;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        padding-left: 10px;
+
+        cursor: pointer;
+    }
+
+    select:hover {
+        opacity: 0.8;
+    }
+
+    label {
+        margin-top: 10px;
+        color: #ffffff;
+    }
+`
