@@ -48,48 +48,48 @@ export const Container = styled.div`
     }
 `
 
-export const InputAdress = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    background: #373737;
-    border-radius: 10px;
-    padding: 15px;
+// export const InputAdress = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 20px;
+//     background: #373737;
+//     border-radius: 10px;
+//     padding: 15px;
 
-    h2 {
-        display: flex;
-        margin-bottom: 10px;
-        color: #ffffff;
-    }
+//     h2 {
+//         display: flex;
+//         margin-bottom: 10px;
+//         color: #ffffff;
+//     }
 
-    input {
-        width: 100%;
-        height: 30px;
-        border-radius: 10px;
-        border: none;
-        padding: 10px;
-    }
+//     input {
+//         width: 100%;
+//         height: 30px;
+//         border-radius: 10px;
+//         border: none;
+//         padding: 10px;
+//     }
 
-    .number {
-        width: 50px;
-    }
+//     .number {
+//         width: 50px;
+//     }
 
-    select { 
-        margin-top: 20px;
-        width: 100%;
-        height: 30px;
-        border-radius: 10px;
-        padding-left: 10px;
+//     select { 
+//         margin-top: 20px;
+//         width: 100%;
+//         height: 30px;
+//         border-radius: 10px;
+//         padding-left: 10px;
 
-        cursor: pointer;
-    }
+//         cursor: pointer;
+//     }
 
-    select:hover {
-        opacity: 0.8;
-    }
+//     select:hover {
+//         opacity: 0.8;
+//     }
 
-    label {
-        margin-top: 10px;
-        color: #ffffff;
-    }
-`
+//     label {
+//         margin-top: 10px;
+//         color: #ffffff;
+//     }
+// `

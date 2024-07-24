@@ -20,9 +20,6 @@ export function SideMenuAdmin({path}){
                 </ItemContainer>
             ))}
             <hr></hr>
-            <button>Loja</button>
-            <button>Abrir Loja</button>
-            <button>Fechar Loja</button>
 
             <ItemContainer style={{position: 'fixed', bottom: '30px'}}>
                 <LogoutIcon style={{color: '#ffffff'}}/>
